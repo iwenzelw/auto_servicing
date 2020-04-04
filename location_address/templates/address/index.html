@@ -1,0 +1,30 @@
+{% load humanize %}
+    <div class="top-header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10">
+                    <ul>
+                        <li><a href="#"><i
+                                class="fa fa-map-marker"></i> {{ location_address.country | default_if_none:"--" }}.
+                            {{ location_address.city | default_if_none:"--" }}, {{ location_address.street | default_if_none:"--" }}
+                            {{ location_address.home | default_if_none:"--" }}</a></li>
+                        <li><a href="#"><i class="fa fa-clock-o"></i> {{ social_contacts.time | default_if_none:"--" }}
+                        </a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> {{ social_contacts.mail | default_if_none:"--" }}
+                        </a></li>
+                        <li><a href="#"><i class="fa fa-phone"></i> {{ social_contacts.tel | default_if_none:"--" }}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-2">
+                    <div class="share-icons">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
