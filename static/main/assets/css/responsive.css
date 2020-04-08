@@ -168,7 +168,7 @@
         visibility: hidden;
     }
     .responsive-menu-area {
-        background: #00299b;
+        background: #0077ff;
         padding: 15px 0;
     }
     .responsive-menu-wrap {
@@ -331,7 +331,7 @@
         visibility: hidden;
     }
     .responsive-menu-area {
-        background: #00299b;
+        background: #0077ff;
         padding: 8px 0 18px;
     }
     .responsive-menu-wrap {
@@ -376,7 +376,7 @@
 /* medium Devices, Tablets and tablet portrait screen */
 @media (max-width: 991px) {
     .main-menu-area {
-        background-color: #00299b;
+        background-color: #0077ff;
     }
     .main-menu-area .navbar-default {
         z-index: 999;

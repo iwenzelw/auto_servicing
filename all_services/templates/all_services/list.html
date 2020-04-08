@@ -1,0 +1,54 @@
+{% extends 'base.html' %}{% load static %}{% load my_tags %}
+{% block content_main %}
+    <!-- Start Breadcumbs Area -->
+    <div class="breadcumbs-area breadcumbs-bg-1 bc-area-padding">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Услуги Автосервиса</h2>
+                            <span style="color: #c3c3c3"><a href="{% url 'main:main' %}">Главная</a> / {% verbose_name_plural object_list %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcumbs Area -->
+
+    <!-- Start Services Area -->
+    <div class="content-block-area">
+        <div class="container">
+            <div class="row">
+                {% if object_list %}
+                    {% for object in object_list %}
+                        <div class="col-sm-6 col-md-4">
+                            <div class="services-item-two">
+                                <div class="services-item-mask">
+                                    <div class="pic">
+                                        <img src="{{ object.img.url }}" alt="Image">
+                                        <ul class="single-links">
+                                            <li><a href="{{object.get_absolute_url_detail}}"> Подробнее <i class="fa fa-long-arrow-right"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="services-item-info">
+                                    <h3 class="title">{{ object.heading }}</h3>
+                                    <p class="description">
+                                        {{ object.heading_min }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="col-sm-12 col-md-12 text-center">
+                        <a href="{% url 'main:main' %}" class="btn theme-btn">Услуг автосервис не предоставляет</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <!-- End Services Area -->
+{% endblock %}

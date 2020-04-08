@@ -22,7 +22,12 @@ from auto_servicing import settings
 urlpatterns = [
     # app
     path('', include('main.urls')),
-    path('', include('location_address.urls')),
+    path('', include('location_address.urls')),  # расположение  и контакт
+    path('', include('all_services.urls')),  # Все сервисы-услуги
+
+    # стороние приложения
+    path('accounts/', include('allauth.urls')),  # регистрация user
+    path('summernote/', include('django_summernote.urls')),
     # admin
     path('admin/', admin.site.urls),
 ]
@@ -30,4 +35,3 @@ if settings.DEBUG:
     urlpatterns = urlpatterns + \
                   static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + \
                   static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

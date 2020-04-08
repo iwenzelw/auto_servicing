@@ -8,7 +8,7 @@ from location_address.models import LocAddress, SocialContacts
 
 class LocAddressView(TemplateView):
     template_name = 'address/index.html'
-    # template_name = 'main/index.html'
+    # template_name = 'main/list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

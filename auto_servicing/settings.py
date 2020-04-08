@@ -24,26 +24,43 @@ SECRET_KEY = 'e0&d(9j0!7j&79%_kkmup(+56n95(!26m66*k(y^sh4gjr%5_)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', ]
+ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'main:main'
+LOGOUT_REDIRECT_URL = 'main:main'
+LOGIN_URL = 'accounts/login'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1  # Определяет срок действия писем с подтверждением по электронной почте (количество дней).
+ACCOUNT_USERNAME_MIN_LENGTH = 4  # Целое число, указывающее минимально допустимую длину имени пользователя.
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.Email.Backend'
 # Application definition
 
 INSTALLED_APPS = [
-    # app
-    'main',
-    'location_address',  # расположение(адресс) и контаты(и соц.сети)
-    'all_services',  # все услуги
-
-    'sorl.thumbnail',  # Миниатюры для Джанго
-    'django.contrib.humanize',  # Набор шаблонных фильтров Django
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    # app
+    'main',
+    'location_address.apps.LocationAddressConfig',  # расположение(адресс) и контаты(и соц.сети)
+    'all_services.apps.AllServicesConfig',  # все услуги
+
+    'imagekit',  # Автоматическая обработка изображений
+    'django_summernote',  # Summernote - это простой редактор
+    'django.contrib.humanize',  # Набор шаблонных фильтров Django
+
+    'allauth',  # регистрация на сайте
+    'allauth.account',  # регистрация на сайте
+    'allauth.socialaccount',
+
+
+
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,8 +77,7 @@ ROOT_URLCONF = 'auto_servicing.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,6 +101,13 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -124,6 +147,41 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL = '/media/'
+SUMMERNOTE_CONFIG = {
+    # Using SummernoteWidget - iframe mode, default
+    'iframe': True,
+
+    # Or, you can set it as False to use SummernoteInplaceWidget by default - no iframe mode
+    # In this case, you have to load Bootstrap/jQuery stuff by manually.
+    # Use this when you're already using Bootstraip/jQuery based themes.
+    # 'iframe': False,
+
+    # You can put custom Summernote settings
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+
+        # Change editor size
+        'width': '100%',
+        'height': '180',
+
+        # # Use proper language setting automatically (default)
+        # 'lang': None,
+
+        # # Or, set editor language/locale forcely
+        # 'lang': 'ru-Ru',
+
+        # You can also add custom settings for external plugins
+        'print': {
+            'stylesheetUrl': '/some_static_folder/printable.css',
+        },
+        'toolbar': [
+            ['style', ['bold', 'italic', 'underline', ]],
+            ['fontsize', ['fontsize']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ]
+    }
+}

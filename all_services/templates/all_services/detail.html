@@ -1,0 +1,139 @@
+{% extends 'base.html' %}{% load static %}{% load my_tags %}
+{% block content_main %}
+    <!-- Start Breadcumbs Area -->
+    <div class="breadcumbs-area breadcumbs-bg-1 bc-area-padding">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h2>Услуги Автосервиса</h2>
+                            <span style="color: #c3c3c3"><a href="{% url 'main:main' %}">Главная</a>
+                                / <a href="{% url 'all_service:all_service-list' %}">{% verbose_name_plural object_list %} </a>
+                            / {% verbose_name object %} {{ object.heading }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcumbs Area -->
+    <!-- Start Services Area -->
+    <div class="content-block-area">
+        <div class="container">
+            <div class="row">
+                <!-- Single Service Left -->
+                <div class="col-sm-9">
+                    <div class="slider-wrapper">
+                        <!-- Swiper -->
+                        <div class="swiper-container gallery-top">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"
+                                     style="background-image:url({{ object.img.url }})"></div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next swiper-button-white"></div>
+                            <div class="swiper-button-prev swiper-button-white"></div>
+                        </div>
+                        <div class="swiper-container gallery-thumbs">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"
+                                     style="background-image:url({{ object.img.url }})"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-content">
+                        <h3 class="page-header">{{ object.heading }}</h3>
+                        <p>{{ object.heading_min }}</p>
+                        <p>{{ object.heading_max }} </p>
+
+
+                        <h3 class="page-header">Стоимость</h3>
+                        {#                            <div class="row">#}
+                        {#                                <div class="col-md-4 col-sm-6">#}
+                        {#                                    <div class="pricingTable">#}
+                        {#                                        <div class="pricingTable-header">#}
+                        {#                                            <span class="price-value">10<span class="currency">$</span></span>#}
+                        {#                                            <h3 class="title">Standard</h3>#}
+                        {#                                        </div>#}
+                        {#                                        <ul class="pricing-content">#}
+                        {#                                            <li>Wheels & Tires Shine</li>#}
+                        {#                                            <li>Suspension Repair</li>#}
+                        {#                                            <li>Paintless Dent Repair</li>#}
+                        {#                                            <li>Auto Glass Repair</li>#}
+                        {#                                            <li>Hail Damage Repair</li>#}
+                        {#                                        </ul>#}
+                        {#                                        <a href="#" class="pricingTable-signup">Sign Up</a>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class="col-md-4 col-sm-6">#}
+                        {#                                    <div class="pricingTable deep-green">#}
+                        {#                                        <div class="pricingTable-header">#}
+                        {#                                            <span class="price-value">20<span class="currency">$</span></span>#}
+                        {#                                            <h3 class="title">Business</h3>#}
+                        {#                                        </div>#}
+                        {#                                        <ul class="pricing-content">#}
+                        {#                                            <li>Wheels & Tires Shine</li>#}
+                        {#                                            <li>Suspension Repair</li>#}
+                        {#                                            <li>Paintless Dent Repair</li>#}
+                        {#                                            <li>Auto Glass Repair</li>#}
+                        {#                                            <li>Hail Damage Repair</li>#}
+                        {#                                        </ul>#}
+                        {#                                        <a href="#" class="pricingTable-signup">Sign Up</a>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {##}
+                        {#                                <div class="col-md-4 col-sm-6">#}
+                        {#                                    <div class="pricingTable orange">#}
+                        {#                                        <div class="pricingTable-header">#}
+                        {#                                            <span class="price-value">30<span class="currency">$</span></span>#}
+                        {#                                            <h3 class="title">Traditional</h3>#}
+                        {#                                        </div>#}
+                        {#                                        <ul class="pricing-content">#}
+                        {#                                            <li>Wheels & Tires Shine</li>#}
+                        {#                                            <li>Suspension Repair</li>#}
+                        {#                                            <li>Paintless Dent Repair</li>#}
+                        {#                                            <li>Auto Glass Repair</li>#}
+                        {#                                            <li>Hail Damage Repair</li>#}
+                        {#                                        </ul>#}
+                        {#                                        <a href="#" class="pricingTable-signup">Sign Up</a>#}
+                        {#                                    </div>#}
+                        {#                                </div>#}
+                        {#                            </div>#}
+                    </div>
+                </div>
+                <!-- End Single Service Left -->
+
+                <!-- Single Service Right -->
+                <div class="col-sm-3">
+                    <div class="vertical-menu left-widget">
+                        <ul>
+                            <li class="active"><a href="{% url 'all_service:all_service-list' %}"><i
+                                    class="fa fa-arrow-circle-right pull-right"></i>
+                                Рекомендуемые {% verbose_name_plural object_list %}</a></li>
+                            {% if object_list %}
+                                {% for object in object_list %}
+                                    <li><a href="{{ object.get_absolute_url_detail }}">{{ object.heading }} <i
+                                            class="fa fa-arrow-circle-right pull-right"></i></a>
+                                    </li>
+                                {% endfor %}
+                            {% else %}
+                                <div class="col-sm-12 col-md-12 text-center">
+                                    <a href="{% url 'main:main' %}" class="btn theme-btn">Услуг автосервис не
+                                        предоставляет</a>
+                                </div>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+
+                </div>
+                <!-- End Single Service Right -->
+            </div>
+        </div>
+    </div>
+    <!-- End Services Area -->
+
+{% endblock %}

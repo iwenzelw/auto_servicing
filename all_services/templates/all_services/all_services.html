@@ -1,0 +1,111 @@
+{% load static %}
+<div class="content-block-area gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="section-title text-center">
+                    <h2><span>НАШИ ОСОБЕННЫЕ </span>УСЛУГИ </h2>
+                    <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
+                    <p>Специалисты нашего многофункционального автосервиса выполняют ремонт и диагностику всех марок и
+                        классов автомобилей начиная с вазовской малолитражки и заканчивая внедорожником
+                        представительского класса.
+                        И даем гарантию на все работы выполненные специалистами нашего
+                        автосервиса.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="featured-boxed text-center">
+                    <div class="octagonWrap">
+                        <div class="octagon"><i class="flaticon-oil"></i></div>
+                    </div>
+                    <h3>Замена масла</h3>
+                    <div class="upper-line"></div>
+                    <div class="bottom-line"></div>
+                    <p>Регулярная замена масла в двигателе является обязательным условием для продления его
+                        эксплуатационного срока. При использовании масла наблюдается уменьшение его вязкости, что
+                        приводит к снижению столь важных смазочных качеств. Это может стать причиной сильного
+                        изнашивания важных элементов мотора</p>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="featured-boxed text-center">
+                    <div class="octagonWrap">
+                        {#                        <div class="octagon"><i class="flaticon-motor-1"></i></div>#}
+                        <div class="octagon"><i class="flaticon-motor"></i></div>
+                    </div>
+                    <h3> РЕМОНТ МОТОРОВ</h3>
+                    <div class="upper-line"></div>
+                    <div class="bottom-line"></div>
+                    <p>Владельцем автомобилей важно особенное внимание уделять состоянию двигателя машины. Сотрудники
+                        автосервиса готовы грамотно выполнить требуемый ремонт двигателя, предварительно
+                        осуществив точную диагностику, чтобы определить все присутствующие проблемы</p>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="featured-boxed text-center">
+                    <div class="octagonWrap">
+                        <div class="octagon"><i class="flaticon-breaks"></i></div>
+                    </div>
+                    <h3>РЕМОНТ ТОРМОЗОВ</h3>
+                    <div class="upper-line"></div>
+                    <div class="bottom-line"></div>
+                    <p>При эксплуатации автомобиля во время поездок на тормоза приходится особенная нагрузка. Крайне
+                        важно постоянно контролировать ее состояние, своевременно выполняя диагностику и ремонт
+                        тормозной системы.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="separator-line"></div>
+
+    <div class="container">
+        <div class="row">
+            {% if object_list %}
+                {% for foo in object_list %}
+                    <div class="col-md-4">
+                        <div class="services-item">
+                            <div class="box">
+                                <img src="{{ foo.img_thumbnail.url }}" alt="Image">
+                                <h3>{{ foo.heading }}</h3>
+                                <div class="box-content">
+                                    <h3 class="title">{{ foo.heading }}</h3>
+                                    <span class="post">{{ foo.heading_min }}</span>
+                                    <ul class="icon">
+                                        <li><a href="{{foo.get_absolute_url_detail}}"><i class="fa fa-link"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="col-md-4">
+                <div class="services-item">
+                    <div class="box">
+                        <img src="{% static 'main/assets/img/services/services-img.jpg' %}" alt="Image">
+                        <h3>Нет услуг</h3>
+                        <div class="box-content">
+                            <h3 class="title">Нет услуг</h3>
+                            <span class="post">Времено приостановлены Услуги</span>
+                            <ul class="icon">
+                                <li><a class="singleImage"
+                                       href="{% static 'main/assets/img/services/services-img.jpg' %}"><i
+                                        class="fa fa-search"></i></a></li>
+                                <li><a href="#"><i class="fa fa-link"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="col-md-12 text-center">
+                <a href="#" class="btn theme-btn">просмотреть все услуги</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
