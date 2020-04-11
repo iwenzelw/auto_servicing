@@ -1,64 +1,73 @@
-<div class="homepage-slides-wrapper">
-    <!-- Slider main container -->
-    <div class="swiper-container swiper1">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide slide-bg-1">
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-6">
-                                    <h1>С более чем 25-летним опытом работы в сфере автосервиса</h1>
-                                    <p>Ценность - это услуга доверия.</p>
-                                    <a class="btn theme-btn" href="">записаться на прием</a>
-                                </div>
-                            </div>
-                        </div>
+{% load static %}
+<!-- Start Homepage Slider -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <!-- Индикаторы -->
+    <ol class="carousel-indicators">
+        {% if banner %}
+            {% for foo in banner %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}"
+                    class="{% if forloop.first %} active {% endif %}"></li>
+            {% endfor %}
+        {% else %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        {% endif %}
+    </ol>
+    <div class="carousel-inner">
+        {% if banner %}
+            {% for foo in banner %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    {% if  foo.img %}
+                        <img class="d-block w-100" src="{{ foo.img.url }}" alt="{{ foo.id }} slide">
+                    {% else %}
+                        <img class="d-block w-100" src="{% static 'main/assets/img/slide-bg/slide-bg-1.jpg' %}"
+                             alt="First slide">
+                    {% endif %}
+                    <div class="carousel-caption">
+                        <h2 style="color: #003eff">{{ foo.name }}</h2>
+                        <p>{{ foo.title }}</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="swiper-slide slide-bg-2">
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-6">
-                                    <h1>Всегда Правильно! Дешево! Быстро!</h1>
-                                    <p>«Если бы вы приехали на месяц раньше, этой крупной поломки могло бы и не
-                                        быть»</p>
-                                    <a class="btn theme-btn" href="">записаться на прием</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            {% endfor %}
+        {% else %}
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'main/assets/img/slide-bg/slide-bg-1.jpg' %}"
+                     alt="First slide">
+                <div class="carousel-caption">
+                    <h2 style="color: #003eff">Добро Пожаловать</h2>
+                    <p>Авто Чемпион рад Вас видеть!</p>
                 </div>
             </div>
-
-            <div class="swiper-slide slide-bg-3">
-                <div class="d-table">
-                    <div class="d-table-cell">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-6">
-                                    <h1>Авто Магазин</h1>
-                                    <p>«У нас всегда есть запчасти на ваш автомобиль».</p>
-                                    <a class="btn theme-btn" href="">выбрать</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'main/assets/img/slide-bg/slide-bg-2.jpg' %}"
+                     alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="color: #003eff">Добро Пожаловать</h2>
+                    <p>Подход к каждому идивидуально</p>
                 </div>
             </div>
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination swiper-pagination1"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{% static 'main/assets/img/slide-bg/slide-bg-3.jpg' %}"
+                     alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="color: #003eff">Добро Пожаловать</h2>
+                    <p>Быстро! Качествено! Недорого!</p>
+                </div>
+            </div>
+        {% endif %}
     </div>
+    <!-- Элементы управления -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Предыдущий</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Следующий</span>
+    </a>
 </div>
+
+
+<!-- Popper -->
+<script src="{% static 'main/assets/js/popper.min.js' %}"></script>

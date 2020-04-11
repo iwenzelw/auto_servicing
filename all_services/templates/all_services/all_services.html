@@ -1,12 +1,13 @@
 {% load static %}
 <div class="content-block-area gray-bg">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+        <div class="row flex-center">
+            <div class="col-md-6 col-md-offset-3 ">
                 <div class="section-title text-center">
                     <h2><span>НАШИ ОСОБЕННЫЕ </span>УСЛУГИ </h2>
                     <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
-                    <p>Специалисты нашего многофункционального автосервиса выполняют ремонт и диагностику всех марок и
+                    <p>Специалисты нашего многофункционального автосервиса выполняют ремонт и диагностику всех марок
+                        и
                         классов автомобилей начиная с вазовской малолитражки и заканчивая внедорожником
                         представительского класса.
                         И даем гарантию на все работы выполненные специалистами нашего
@@ -39,7 +40,8 @@
                     <h3> РЕМОНТ МОТОРОВ</h3>
                     <div class="upper-line"></div>
                     <div class="bottom-line"></div>
-                    <p>Владельцем автомобилей важно особенное внимание уделять состоянию двигателя машины. Сотрудники
+                    <p>Владельцем автомобилей важно особенное внимание уделять состоянию двигателя машины.
+                        Сотрудники
                         автосервиса готовы грамотно выполнить требуемый ремонт двигателя, предварительно
                         осуществив точную диагностику, чтобы определить все присутствующие проблемы</p>
                 </div>
@@ -65,18 +67,24 @@
 
     <div class="container">
         <div class="row">
-            {% if object_list %}
-                {% for foo in object_list %}
+            {% if all_service %}
+                {% for foo in all_service %}
                     <div class="col-md-4">
                         <div class="services-item">
                             <div class="box">
-                                <img src="{{ foo.img_thumbnail.url }}" alt="Image">
+                                {% if foo.img_thumbnail %}
+                                    <img src="{{ foo.img_thumbnail.url }}" alt="Image">
+                                {% else %}
+                                    <img src="{% static 'main/assets/img/services/services-img.jpg' %}" alt="Image">
+                                {% endif %}
                                 <h3>{{ foo.heading }}</h3>
                                 <div class="box-content">
                                     <h3 class="title">{{ foo.heading }}</h3>
                                     <span class="post">{{ foo.heading_min }}</span>
                                     <ul class="icon">
-                                        <li><a href="{{foo.get_absolute_url_detail}}"><i class="fa fa-link"></i></a></li>
+                                        <li><a href="{{ foo.get_absolute_url_detail }}"><i
+                                                class="fa fa-link"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

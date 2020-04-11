@@ -1,474 +1,488 @@
 {% extends 'base.html' %}{% load static %}
 {% block address %}
     <!-- Start область верхнего заголовка -->
-        {% include 'address/index.html' %}
-     <!-- End область верхнего заголовка -->
+    {% include 'address/index.html' %}
+    <!-- End область верхнего заголовка -->
 {% endblock %}
 {% block content_main %}
-<!-- SearchBox Modal -->
-<div id="search">
-    <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="SEARCH KEYWORD(s)"/>
-        <button type="submit" class="btn theme-btn"><i class="fa fa-search"></i> Search</button>
-    </form>
-</div>
-<!-- End SearchBox Modal -->
-<!-- Start Homepage Slider -->
-{% include 'main/slider/slider.html' %}
-<!-- End Homepage Slider -->
-
-<!-- Start Services Area -->
-{% include 'all_services/all_services.html' %}
-<!-- End Services Area -->
-
-<!-- Start Why Choose Us Area -->
-<div class="content-block-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="section-title text-center">
-                    <h2><span>Почему нас выбрали</span> клиенты</h2>
-                    <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
-                    <p>Вы получаете ненавязчивый сервис.
-                        Специалисты Авто Чемпиона никогда не предложат вам заменить или отремонтировать то, что не
-                        нужно.
-                        Мы честно рассказываем, что необходимо сделать срочно, а с чем можно подождать. Кроме того,
-                        мастера-консультанты ответят на все ваши вопросы, связанные с обслуживанием автомобиля.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="boxed-item" style="height: 30em;">
-                    <span class="sirial-number">01</span>
-                    <span class="single-boxed"><i class="flaticon-crane"></i></span>
-                    <h3>Наш клиент всегда знает, за что платит.</h3>
-                    <p>Все действия автосервиса Авто Чемпилон согласуются с клиентом. После обращения в наш автосервис,
-                        у
-                        вас будет точная информация о необходимых работах и запчастях, сроках и стоимости услуг.</p>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="boxed-item" style="height: 30em;">
-                    <span class="sirial-number">02</span>
-                    <span class="single-boxed"><i class="flaticon-wheel-1"></i></span>
-                    <h3>Мы ничего не скрываемот наших клиентов.</h3>
-                    <p>Хотите лично удостовериться в неисправностях вашего авто? По вашему желанию вы можете пройти в
-                        ремонтную зону и убедиться в обнаруженных поломках.</p>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="boxed-item" style="height: 30em;">
-                    <span class="sirial-number">03</span>
-                    <span class="single-boxed"><i class="flaticon-speedometer"></i></span>
-                    <h3>Выполним всё вовремя и с первого раза.</h3>
-                    <p>Если вы выбрали автосервис Авто Чемпион, значит уедете от нас вовремя и на исправном
-                        автомобиле.</p>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-3">
-                <div class="boxed-item" style="height: 30em;">
-                    <span class="sirial-number">04</span>
-                    <span class="single-boxed"><i class="flaticon-car-radio"></i></span>
-                    <h3>Огромный ассортимент запасных частей и расходных материаловна</h3>
-                    <p>Огромный выбор комплектующих как оригинальных, так качественных аналогов от
-                        различных производителей. Над точным подбором запасных частей для вас Наши специалисты</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 text-center">
-            <a href="" class="btn theme-btn">О Нас</a>
-        </div>
+    <!-- SearchBox Modal -->
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="SEARCH KEYWORD(s)"/>
+            <button type="submit" class="btn theme-btn"><i class="fa fa-search"></i> Search</button>
+        </form>
     </div>
-</div>
-<!-- End Why Choose Us Area -->
+    <!-- End SearchBox Modal -->
+    <!-- Start Homepage Slider -->
+    {% include 'main/slider/slider.html' %}
+    <!-- End Homepage Slider -->
 
-<!-- Start Count-Down Area -->
-<div class="count-down-area count-bg jarallax">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-md-3">
-                <div class="count-down-boxed text-center">
-                    <span class="count-icon"><i class="ion-ios-people-outline"></i> <span class="count-number counter">12,500</span></span>
-                    <h3 class="count-info">Счастливые клиенты</h3>
+    <!-- Start Services Area -->
+    {% include 'all_services/all_services.html' %}
+    <!-- End Services Area -->
+
+    <!-- Start Why Choose Us Area -->
+    <div class="content-block-area">
+        <div class="container">
+            <div class="row flex-center">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="section-title text-center">
+                            <h2><span>Почему нас выбрали</span> клиенты</h2>
+                            <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
+                            <p>Вы получаете ненавязчивый сервис.
+                                Специалисты Авто Чемпиона никогда не предложат вам заменить или отремонтировать то, что
+                                не
+                                нужно.
+                                Мы честно рассказываем, что необходимо сделать срочно, а с чем можно подождать. Кроме
+                                того,
+                                мастера-консультанты ответят на все ваши вопросы, связанные с обслуживанием
+                                автомобиля.</p>
+                        </div>
+
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="count-down-boxed text-center">
-                    <span class="count-icon"><i class="ion-ios-partlysunny-outline"></i> <span
-                            class="count-number counter">17,500</span></span>
-                    <h3 class="count-info">Завершенные проекты</h3>
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="boxed-item" style="height: 30em;">
+                        <span class="sirial-number">01</span>
+                        <span class="single-boxed"><i class="flaticon-crane"></i></span>
+                        <h3>Наш клиент всегда знает, за что платит.</h3>
+                        <p>Все действия автосервиса Авто Чемпилон согласуются с клиентом. После обращения в наш
+                            автосервис,
+                            у
+                            вас будет точная информация о необходимых работах и запчастях, сроках и стоимости услуг.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="boxed-item" style="height: 30em;">
+                        <span class="sirial-number">02</span>
+                        <span class="single-boxed"><i class="flaticon-wheel-1"></i></span>
+                        <h3>Мы ничего не скрываемот наших клиентов.</h3>
+                        <p>Хотите лично удостовериться в неисправностях вашего авто? По вашему желанию вы можете пройти
+                            в
+                            ремонтную зону и убедиться в обнаруженных поломках.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="boxed-item" style="height: 30em;">
+                        <span class="sirial-number">03</span>
+                        <span class="single-boxed"><i class="flaticon-speedometer"></i></span>
+                        <h3>Выполним всё вовремя и с первого раза.</h3>
+                        <p>Если вы выбрали автосервис Авто Чемпион, значит уедете от нас вовремя и на исправном
+                            автомобиле.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="boxed-item" style="height: 30em;">
+                        <span class="sirial-number">04</span>
+                        <span class="single-boxed"><i class="flaticon-car-radio"></i></span>
+                        <h3>Огромный ассортимент запасных частей и расходных материаловна</h3>
+                        <p>Огромный выбор комплектующих как оригинальных, так качественных аналогов от
+                            различных производителей. Над точным подбором запасных частей для вас Наши специалисты</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="count-down-boxed text-center">
-                    <span class="count-icon"><i class="ion-ios-paperplane-outline"></i> <span
-                            class="count-number counter">15,500</span></span>
-                    <h3 class="count-info">Решенные задачи</h3>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="count-down-boxed text-center">
-                    <span class="count-icon"><i class="ion-ios-thunderstorm-outline"></i> <span
-                            class="count-number counter">14,500</span></span>
-                    <h3 class="count-info">Отработанные часы</h3>
-                </div>
+
+            <div class="col-md-12 text-center">
+                <a href="" class="btn theme-btn">О Нас</a>
             </div>
         </div>
     </div>
-</div>
-<!-- End Count-Down Area -->
+    <!-- End Why Choose Us Area -->
 
-<!-- Start Appointment Area -->
-<div class="content-block-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="apointment-preview-boxed man-image-bg wow fadeInUp"></div>
-            </div>
-            <div class="col-md-6">
-                <div class="section-title text-center">
-                    <h2><span>Отправить запись</span> на ремонт</h2>
-                    <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
-                    <p>На нашем Автосервисе отсутствует долгая и изнурительная процедура приема вашего автомобиля на
-                        ремонт, Вам достаточно позвонить нам по телефону {{ social_contacts.tel }} или приехать непосредственно на
-                        сервис, наши специалисты тут же встретят вас и займутся поиском неисправности вашего
-                        автомобиля.</p>
-                </div>
-                <form class="appointment-form" action="index.html">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>выбирите информ</label>
-                            <select id="Year">
-                                <option value="hide">-- Год, авто --</option>
-                                <option value="2010">2010</option>
-                                <option value="2011">2011</option>
-                                <option value="2012">2012</option>
-                                <option value="2013">2013</option>
-                                <option value="2014">2014</option>
-                                <option value="2015">2015</option>
-                                <option value="2016">2016</option>
-                                <option value="2017">2017</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Выбирите Сервис</label>
-                            <select id="selectServices">
-                                <option value="hide">-- Наши Услуги --</option>
-                                <option value="1">Aluminum Repair</option>
-                                <option value="2">Fender Repair</option>
-                                <option value="3">Auto Painting</option>
-                                <option value="4">Oil Change</option>
-                                <option value="4">Collision Repair</option>
-                                <option value="4">Break Repair</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Желаемая Дата</label>
-                            <input type="text" id="datepicker" name="appointmentDate" placeholder="Желаемое дата"
-                                   required>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Желаемое Время</label>
-                            <select id="Time">
-                                <option value="hide">-- время --</option>
-                                <option value="2010">09:00AM - 10:00AM</option>
-                                <option value="2011">10:00AM - 11:00AM</option>
-                                <option value="2012">11:00AM - 12:00PM</option>
-                                <option value="2013">12:00PM - 01:00PM</option>
-                                <option value="2014">01:00PM - 02:00PM</option>
-                                <option value="2015">02:00PM - 03:00PM</option>
-                                <option value="2015">03:00PM - 04:00PM</option>
-                                <option value="2015">04:00PM - 05:00PM</option>
-                                <option value="2015">05:00PM - 06:00PM</option>
-                                <option value="2015">06:00PM - 07:00PM</option>
-                                <option value="2015">07:00PM - 08:00PM</option>
-                                <option value="2015">08:00PM - 09:00PM</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Контактные данные</p>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="yourName" placeholder="Ваша Имя" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" name="yourEmail" placeholder="Ваша почта" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <input type="text" name="yourPhone" placeholder="Ваш Телефон" required>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <textarea name="yourMessage" id="yourMessage" placeholder="Ваше сообщение"
-                                      required></textarea>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <button class="btn theme-btn" type="submit">Отправить запись</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Appointment Area -->
-
-<!-- Start News Area -->
-<div class="content-block-area gray-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="section-title text-center">
-                    <h2><span>СВЕЖИЕ </span> НОВОСТИ</h2>
-                    <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-{#        <div class="row">#}
-{#            <div class="col-sm-4">#}
-{#                <div class="single-blog-item">#}
-{#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-one.jpg" alt="Image Description"></a>#}
-{#                    <div class="blog-item-info">#}
-{#                        <span class="blog-date">August 20, 2017</span>#}
-{#                        <div class="separator">|</div>#}
-{#                        <a class="blog-tags red" href="#"><i class="fa fa-tag"></i> Auto</a>#}
-{#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
-{#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
-{#                            been the industry's standard dummy text ever since the 1500s.</p>#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col-xs-7">#}
-{#                                <div class="blog-item-profile">#}
-{#                                    <img src="assets/img/testimonials-1.jpg" alt="Image description"> <a href="#">anika#}
-{#                                    rimjim</a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col-xs-5 text-right">#}
-{#                                <div class="blog-item-c-v-info">#}
-{#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
-{#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{#            <div class="col-sm-4">#}
-{#                <div class="single-blog-item">#}
-{#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-two.jpg" alt="Image Description"></a>#}
-{#                    <div class="blog-item-info">#}
-{#                        <span class="blog-date">August 20, 2017</span>#}
-{#                        <div class="separator">|</div>#}
-{#                        <a class="blog-tags green" href="#"><i class="fa fa-tag"></i> motor</a>#}
-{#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
-{#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
-{#                            been the industry's standard dummy text ever since the 1500s.</p>#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col-xs-7">#}
-{#                                <div class="blog-item-profile">#}
-{#                                    <img src="assets/img/44w.jpg" alt="Image description"> <a href="#">anika rimjim</a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col-xs-5 text-right">#}
-{#                                <div class="blog-item-c-v-info">#}
-{#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
-{#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{#            <div class="col-sm-4">#}
-{#                <div class="single-blog-item">#}
-{#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-three.jpg" alt="Image Description"></a>#}
-{#                    <div class="blog-item-info">#}
-{#                        <span class="blog-date">August 20, 2017</span>#}
-{#                        <div class="separator">|</div>#}
-{#                        <a class="blog-tags blue" href="#"><i class="fa fa-tag"></i> repair</a>#}
-{#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
-{#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
-{#                            been the industry's standard dummy text ever since the 1500s.</p>#}
-{##}
-{#                        <div class="row">#}
-{#                            <div class="col-xs-7">#}
-{#                                <div class="blog-item-profile">#}
-{#                                    <img src="assets/img/10m.jpg" alt="Image description"> <a href="#">anika rimjim</a>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                            <div class="col-xs-5 text-right">#}
-{#                                <div class="blog-item-c-v-info">#}
-{#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
-{#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-    </div>
-</div>
-<!-- End News Area -->
-
-<!-- Start Our Parners Area -->
-<div class="content-block-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="section-title text-center">
-                    <h2><span>Наши</span> Партнеры</h2>
-                    <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-{#        <div class="partner-slides">#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-1.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-2.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-3.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-4.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-5.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#            <div class="single-partner-slide">#}
-{#                <a class="partners-logo" href="#"><img src="assets/img/partner-6.png" alt="Image Description"></a>#}
-{#            </div>#}
-{#        </div>#}
-    </div>
-</div>
-<!-- End Our Parners Area -->
-
-<!-- Footer Area -->
-<footer class="site-footer">
-    <!-- Footer Top Area -->
-    <div class="footer-top-area">
+    <!-- Start Count-Down Area -->
+    <div class="count-down-area count-bg jarallax">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
-                    <div class="footer-top-info">
-                        <span class="footer-icons"><i class="fa fa-map-o"></i></span>
-                        <p>1828 Johns Drive Glenview, IL 60025</p>
+                <div class="col-sm-6 col-md-3">
+                    <div class="count-down-boxed text-center">
+                        <span class="count-icon"><i class="ion-ios-people-outline"></i> <span
+                                class="count-number counter">12,500</span></span>
+                        <h3 class="count-info">Счастливые клиенты</h3>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="footer-top-info">
-                        <span class="footer-icons"><i class="flaticon-crane"></i></span>
-                        <p>Working Days Monday to Friday</p>
+                <div class="col-sm-6 col-md-3">
+                    <div class="count-down-boxed text-center">
+                    <span class="count-icon"><i class="ion-ios-partlysunny-outline"></i> <span
+                            class="count-number counter">17,500</span></span>
+                        <h3 class="count-info">Завершенные проекты</h3>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="footer-top-info">
-                        <span class="footer-icons"><i class="fa fa-headphones"></i></span>
-                        <p>Give us a free call (224) 228-8475</p>
+                <div class="col-sm-6 col-md-3">
+                    <div class="count-down-boxed text-center">
+                    <span class="count-icon"><i class="ion-ios-paperplane-outline"></i> <span
+                            class="count-number counter">15,500</span></span>
+                        <h3 class="count-info">Решенные задачи</h3>
                     </div>
                 </div>
-            </div>
-            <div class="hr-line"></div>
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="footer-wid">
-                        <a href="index.html" class="footer-logo"><img src="assets/img/logo.png" alt="logo"></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="#" class="link-color">Read More About Us <i class="fa  fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-8 col-sm-12">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="footer-wid footer-menu">
-                                <h3 class="footer-wid-title">Navigation</h3>
-                                <ul>
-                                    <li><a href="index.html"><i class="fa  fa-angle-right"></i> home</a></li>
-                                    <li><a href="about-us.html"><i class="fa  fa-angle-right"></i> About</a></li>
-                                    <li><a href="projects.html"><i class="fa  fa-angle-right"></i> our mission</a></li>
-                                    <li><a href="industries.html"><i class="fa  fa-angle-right"></i> services</a></li>
-                                    <li><a href="gallery.html"><i class="fa  fa-angle-right"></i> gallery</a></li>
-                                    <li><a href="blog.html"><i class="fa  fa-angle-right"></i> blog</a></li>
-                                    <li><a href="contact-us.html"><i class="fa  fa-angle-right"></i> contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="footer-wid footer-menu">
-                                <h3 class="footer-wid-title">Hours of Operation</h3>
-                                <ul>
-                                    <li><i class="fa  fa-angle-right"></i> Monday:7:30am - 5:30pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Tuesday:7:30am - 5:30pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Wednesday:7:30am - 5:30pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Thursday:7:30am - 5:30pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Friday:7:30am - 5:30pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Saturday:7:30am - 3:00pm</li>
-                                    <li><i class="fa  fa-angle-right"></i> Sunday: Closed</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-sm-4">
-                            <div class="footer-wid">
-                                <h3 class="footer-wid-title">Get In Touch</h3>
-                                <p>1828 Johns Drive Glenview, IL 60025</p>
-                                <div class="address-info">
-                                    <span><i class="fa  fa-phone"></i> (224) 228-8475</span><br>
-                                    <span><i class="fa  fa-envelope"></i> support@carservice.com </span>
-                                </div>
-                                <div class="subscribe">
-                                    <form action="index.html">
-                                        <input type="text" placeholder="Type your email" required>
-                                        <button>Subscribe now <i class="fa  fa-paper-plane"></i></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="social-icos">
-                        <ul class="list-inline">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
+                <div class="col-sm-6 col-md-3">
+                    <div class="count-down-boxed text-center">
+                    <span class="count-icon"><i class="ion-ios-thunderstorm-outline"></i> <span
+                            class="count-number counter">14,500</span></span>
+                        <h3 class="count-info">Отработанные часы</h3>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- End Footer Top -->
+    </div>
+    <!-- End Count-Down Area -->
 
-</footer> <!-- End Footer Area -->
+    <!-- Start Appointment Area -->
+    <div class="content-block-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="apointment-preview-boxed man-image-bg wow fadeInUp"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="section-title text-center">
+                        <h2><span>Отправить запись</span> на ремонт</h2>
+                        <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
+                        <p>На нашем Автосервисе отсутствует долгая и изнурительная процедура приема вашего автомобиля на
+                            ремонт, Вам достаточно позвонить нам по телефону {{ social_contacts.tel }} или приехать
+                            непосредственно на
+                            сервис, наши специалисты тут же встретят вас и займутся поиском неисправности вашего
+                            автомобиля.</p>
+                    </div>
+                    <form class="appointment-form" action="index.html">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>выбирите информ</label>
+                                <select id="Year">
+                                    <option value="hide">-- Год, авто --</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Выбирите Сервис</label>
+                                <select id="selectServices">
+                                    <option value="hide">-- Наши Услуги --</option>
+                                    <option value="1">Aluminum Repair</option>
+                                    <option value="2">Fender Repair</option>
+                                    <option value="3">Auto Painting</option>
+                                    <option value="4">Oil Change</option>
+                                    <option value="4">Collision Repair</option>
+                                    <option value="4">Break Repair</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Желаемая Дата</label>
+                                <input type="text" id="datepicker" name="appointmentDate" placeholder="Желаемое дата"
+                                       required>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Желаемое Время</label>
+                                <select id="Time">
+                                    <option value="hide">-- время --</option>
+                                    <option value="2010">09:00AM - 10:00AM</option>
+                                    <option value="2011">10:00AM - 11:00AM</option>
+                                    <option value="2012">11:00AM - 12:00PM</option>
+                                    <option value="2013">12:00PM - 01:00PM</option>
+                                    <option value="2014">01:00PM - 02:00PM</option>
+                                    <option value="2015">02:00PM - 03:00PM</option>
+                                    <option value="2015">03:00PM - 04:00PM</option>
+                                    <option value="2015">04:00PM - 05:00PM</option>
+                                    <option value="2015">05:00PM - 06:00PM</option>
+                                    <option value="2015">06:00PM - 07:00PM</option>
+                                    <option value="2015">07:00PM - 08:00PM</option>
+                                    <option value="2015">08:00PM - 09:00PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Контактные данные</p>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="yourName" placeholder="Ваша Имя" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="yourEmail" placeholder="Ваша почта" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" name="yourPhone" placeholder="Ваш Телефон" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <textarea name="yourMessage" id="yourMessage" placeholder="Ваше сообщение"
+                                      required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <button class="btn theme-btn" type="submit">Отправить запись</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Appointment Area -->
+
+    <!-- Start News Area -->
+    <div class="content-block-area gray-bg">
+        <div class="container">
+            <div class="row flex-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="section-title text-center">
+                        <h2><span>СВЕЖИЕ </span> НОВОСТИ</h2>
+                        <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            {#        <div class="row">#}
+            {#            <div class="col-sm-4">#}
+            {#                <div class="single-blog-item">#}
+            {#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-one.jpg" alt="Image Description"></a>#}
+            {#                    <div class="blog-item-info">#}
+            {#                        <span class="blog-date">August 20, 2017</span>#}
+            {#                        <div class="separator">|</div>#}
+            {#                        <a class="blog-tags red" href="#"><i class="fa fa-tag"></i> Auto</a>#}
+            {#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
+            {#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
+            {#                            been the industry's standard dummy text ever since the 1500s.</p>#}
+            {##}
+            {#                        <div class="row">#}
+            {#                            <div class="col-xs-7">#}
+            {#                                <div class="blog-item-profile">#}
+            {#                                    <img src="assets/img/testimonials-1.jpg" alt="Image description"> <a href="#">anika#}
+            {#                                    rimjim</a>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                            <div class="col-xs-5 text-right">#}
+            {#                                <div class="blog-item-c-v-info">#}
+            {#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
+            {#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {##}
+            {#            <div class="col-sm-4">#}
+            {#                <div class="single-blog-item">#}
+            {#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-two.jpg" alt="Image Description"></a>#}
+            {#                    <div class="blog-item-info">#}
+            {#                        <span class="blog-date">August 20, 2017</span>#}
+            {#                        <div class="separator">|</div>#}
+            {#                        <a class="blog-tags green" href="#"><i class="fa fa-tag"></i> motor</a>#}
+            {#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
+            {#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
+            {#                            been the industry's standard dummy text ever since the 1500s.</p>#}
+            {##}
+            {#                        <div class="row">#}
+            {#                            <div class="col-xs-7">#}
+            {#                                <div class="blog-item-profile">#}
+            {#                                    <img src="assets/img/44w.jpg" alt="Image description"> <a href="#">anika rimjim</a>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                            <div class="col-xs-5 text-right">#}
+            {#                                <div class="blog-item-c-v-info">#}
+            {#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
+            {#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {##}
+            {#            <div class="col-sm-4">#}
+            {#                <div class="single-blog-item">#}
+            {#                    <a href="#" class="zoomin"><img src="assets/img/blog-item-three.jpg" alt="Image Description"></a>#}
+            {#                    <div class="blog-item-info">#}
+            {#                        <span class="blog-date">August 20, 2017</span>#}
+            {#                        <div class="separator">|</div>#}
+            {#                        <a class="blog-tags blue" href="#"><i class="fa fa-tag"></i> repair</a>#}
+            {#                        <a href="#"><h3>Blog Title Goes to Here</h3></a>#}
+            {#                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has#}
+            {#                            been the industry's standard dummy text ever since the 1500s.</p>#}
+            {##}
+            {#                        <div class="row">#}
+            {#                            <div class="col-xs-7">#}
+            {#                                <div class="blog-item-profile">#}
+            {#                                    <img src="assets/img/10m.jpg" alt="Image description"> <a href="#">anika rimjim</a>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                            <div class="col-xs-5 text-right">#}
+            {#                                <div class="blog-item-c-v-info">#}
+            {#                                    <span><a href="#"><i class="fa fa-comments-o"> 25</i></a></span>#}
+            {#                                    <span><a href="#"><i class="fa fa-eye"> 520</i></a></span>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </div>#}
+            {#        </div>#}
+        </div>
+    </div>
+    <!-- End News Area -->
+
+    <!-- Start Our Parners Area -->
+    <div class="content-block-area">
+        <div class="container">
+            <div class="row flex-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="section-title text-center">
+                        <h2><span>Наши</span> Партнеры</h2>
+                        <div class="car-icon"><img src="{% static 'main/assets/img/cars.png' %}" alt="car"></div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            {#        <div class="partner-slides">#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-1.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-2.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-3.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-4.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-5.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#            <div class="single-partner-slide">#}
+            {#                <a class="partners-logo" href="#"><img src="assets/img/partner-6.png" alt="Image Description"></a>#}
+            {#            </div>#}
+            {#        </div>#}
+        </div>
+    </div>
+    <!-- End Our Parners Area -->
+
+    <!-- Footer Area -->
+    <footer class="site-footer">
+        <!-- Footer Top Area -->
+        <div class="footer-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="footer-top-info">
+                            <span class="footer-icons"><i class="fa fa-map-o"></i></span>
+                            <p>{{ location_address.city | default_if_none:"--" }}, {{ location_address.street | default_if_none:"--" }}
+                                {{ location_address.home | default_if_none:"--" }}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-top-info">
+                            <span class="footer-icons"><i class="flaticon-crane"></i></span>
+                            <p>Доступно.<br>Качественно.<br>С гарантией.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="footer-top-info">
+                            <span class="footer-icons"><i class="fa fa-headphones"></i></span>
+                            <p>Позвоните нам <br>{{ social_contacts.tel | default_if_none:"--" }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hr-line"></div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="footer-wid">
+                            <a href="" class="footer-logo"><img src="{% static 'main/assets/img/logos/logo.png' %}"
+                                                                alt="logo"></a>
+                            <p>На протяжении всего времени существования Авто Чемпион основным требованием к
+                                каждому сотруднику компании является внимательное, уважительное и профессиональное
+                                отношение к каждому клиенту!</p>
+                            <a href="#" class="link-color">Читать Больше О нас <i
+                                    class="fa  fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="footer-wid footer-menu">
+                                    <h3 class="footer-wid-title">Навигация</h3>
+                                    <ul>
+                                        <li><a href="{% url 'main:main' %}"><i class="fa  fa-angle-right"></i>
+                                            Главная</a></li>
+                                        <li><a href=""><i class="fa  fa-angle-right"></i> О нас</a></li>
+                                        <li><a href="{% url 'all_service:all_service-list' %}"><i
+                                                class="fa  fa-angle-right"></i> Услуги</a></li>
+
+                                        <li><a href="contact-us.html"><i class="fa  fa-angle-right"></i> Контакты</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <div class="footer-wid footer-menu">
+                                    <h3 class="footer-wid-title">ЧАСЫ РАБОТЫ</h3>
+                                    <ul>
+                                        <li><i class="fa  fa-angle-right"></i> Понедельник:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Вторник:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Среда:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Четверг:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Пятница:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Суббота:9:00 - 20:00</li>
+                                        <li><i class="fa  fa-angle-right"></i> Воскресенье: - 9:00 - 20:00</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-4">
+                                <div class="footer-wid">
+                                    <h3 class="footer-wid-title">Мы находимся</h3>
+                                    <p> {{ location_address.city | default_if_none:"--" }}, {{ location_address.street | default_if_none:"--" }}, {{ location_address.home | default_if_none:"--" }}</p>
+                                    <div class="address-info">
+                                        <span><i
+                                                class="fa  fa-phone"></i> {{ social_contacts.tel | default_if_none:"--" }}</span><br>
+                                        <span><i
+                                                class="fa  fa-envelope"></i> {{ social_contacts.mail | default_if_none:"--" }} </span>
+                                    </div>
+                                    <div class="subscribe">
+                                        <form action="index.html">
+                                            <input type="text" placeholder="Оставте Ваш email" required>
+                                            <button>Подписаться <i class="fa  fa-paper-plane"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="social-icos">
+                            <ul class="list-inline">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- End Footer Top -->
+
+    </footer> <!-- End Footer Area -->
 {% endblock %}

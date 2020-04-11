@@ -27,7 +27,11 @@
                             <div class="services-item-two">
                                 <div class="services-item-mask">
                                     <div class="pic">
+                                        {% if object.img %}
                                         <img src="{{ object.img.url }}" alt="Image">
+                                            {% else %}
+                                            <img src="{% static 'main/assets/img/services/services-img.jpg' %}" alt="Image">
+                                        {% endif %}
                                         <ul class="single-links">
                                             <li><a href="{{object.get_absolute_url_detail}}"> Подробнее <i class="fa fa-long-arrow-right"></i></a></li>
                                         </ul>

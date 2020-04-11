@@ -9,7 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" sizes="16x16" href="{% static 'main/assets/img/favicon/logo.ico' %}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'main/assets/css/bootstrap.min.css' %}">
+    {#    <link rel="stylesheet" href="{% static 'main/assets/css/bootstrap.min.css' %}">#}
+    <link rel="stylesheet" href="{% static 'main/assets/bootstrap-4.4.1-dist/css/bootstrap.min.css' %}">
     <!-- Font-awesome CSS -->
     <link rel="stylesheet" href="{% static 'main/assets/css/font-awesome.min.css' %}">
     <!-- Flaticon CSS -->
@@ -32,7 +33,7 @@
     <link rel="stylesheet" href="{% static 'main/assets/css/responsive.css' %}">
     <!-- jQuery min js -->
     <script src="{% static 'main/assets/js/jquery-3.4.1.min.js' %}"></script>
-{#    <script src="{% static 'main/assets/js/jquery-1.12.4.min.js' %}"></script>#}
+    {#    <script src="{% static 'main/assets/js/jquery-1.12.4.min.js' %}"></script>#}
 
 
 </head>
@@ -47,20 +48,22 @@
         {% block address %}
             <!-- Start область верхнего заголовка -->
         {% endblock %}
-        <!-- Start главного меню -->
-        {% include 'main/main_menu/main_menu.html' %}
-        <!-- End главного меню -->
-        {% block content_main %}
 
-        {% endblock %}
+            <!-- Start главного меню -->
+            {% include 'main/main_menu/main_menu.html' %}
+            <!-- End главного меню -->
+            {% block content_main %}
+
+            {% endblock %}
+
     </div>
 </div>
 <!-- Footer Area -->
 <div class="footer">
     <footer class="site-footer">
 
-            <!-- Start область верхнего заголовка -->
-       {% include 'address/index.html' %}
+        <!-- Start область верхнего заголовка -->
+        {% include 'address/index.html' %}
         <!-- Footer Bottom Area -->
         <div class="footer-copyright-area">
             <div class="container">
@@ -74,7 +77,8 @@
                         Все права защищены.
                     </div>
                     <div class="col-md-6 col-sm-7 text-right">
-                        <a href="#">Глобус</a> <span class="seprator">|</span> <a href="{% url 'main:main' %}">Чемпион</a>
+                        <a href="#">Глобус</a> <span class="seprator">|</span> <a
+                            href="{% url 'main:main' %}">Чемпион</a>
                     </div>
                 </div>
             </div>
@@ -94,8 +98,8 @@
 </div>
 <!-- End SearchBox Modal -->
 {#    <script src="{% static 'main/assets/js/jquery-1.12.4.min.js' %}"></script>#}
-<!-- Bootstrap JS file -->
-<script src="{% static 'main/assets/js/bootstrap.min.js' %}"></script>
+<!-- Bootstrap JS file новый-->
+<script src="{% static 'main/assets/bootstrap-4.4.1-dist/js/bootstrap.min.js' %}"></script>
 <!-- Owl-Carousel JS file -->
 <script src="{% static 'main/assets/js/owl.carousel.min.js' %}"></script>
 <!-- Magnific Popup JS file -->
@@ -128,5 +132,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0jIY1DdGJ7yWZrPDmhCiupu_K2En_4HY"></script>
 <!-- Custom JS file -->
 <script src="{% static 'main/assets/js/active.js' %}"></script>
+{#<script src="{% static 'main/assets/jS/slider.js' %}"></script>#}
 </body>
 </html>

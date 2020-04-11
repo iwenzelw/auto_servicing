@@ -24,7 +24,7 @@ SECRET_KEY = 'e0&d(9j0!7j&79%_kkmup(+56n95(!26m66*k(y^sh4gjr%5_)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '188.225.78.128']
 
 LOGIN_REDIRECT_URL = 'main:main'
 LOGOUT_REDIRECT_URL = 'main:main'
@@ -150,6 +150,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
     'iframe': True,
@@ -166,13 +167,13 @@ SUMMERNOTE_CONFIG = {
 
         # Change editor size
         'width': '100%',
-        'height': '180',
+        'height': '280',
 
         # # Use proper language setting automatically (default)
         # 'lang': None,
 
         # # Or, set editor language/locale forcely
-        # 'lang': 'ru-Ru',
+        'lang': 'ru-Ru',
 
         # You can also add custom settings for external plugins
         'print': {

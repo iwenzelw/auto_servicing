@@ -1,14 +1,35 @@
 from django.contrib import admin
+from django.forms import ModelForm
+from django_summernote.widgets import SummernoteWidget
 
-# Register your models here.
-from django.utils.safestring import mark_safe
-
-from all_services.forms import AllServicesForm
 from all_services.models import AllServices, ServiceSingle
+
+
+class AllServicesForm(ModelForm):
+    model = AllServices
+    fields = '__all__'
+
+    class Meta:
+        widgets = {
+            'heading_min': SummernoteWidget(),
+            'heading_max': SummernoteWidget(),
+        }
+
+
+class ServiceSingleForm(ModelForm):
+    model = ServiceSingle
+    fields = '__all__'
+
+    class Meta:
+        widgets = {
+            'title': SummernoteWidget(),
+
+        }
 
 
 @admin.register(AllServices)
 class AllServicesAdmin(admin.ModelAdmin):
+    form = AllServicesForm
     list_display = (
         'id',
         'heading',
@@ -18,15 +39,11 @@ class AllServicesAdmin(admin.ModelAdmin):
         'heading',
     )
     readonly_fields = ('get_image',)
-
-    def get_image(self, obj):
-        return mark_safe(f'<img src={obj.img.url} width="60" height="50"')
-
-    get_image.short_description = "Изображение"
 
 
 @admin.register(ServiceSingle)
-class AllServicesAdmin(admin.ModelAdmin):
+class ServiceSingleAdmin(admin.ModelAdmin):
+    form = ServiceSingleForm
     list_display = (
         'id',
         'name',
@@ -36,8 +53,3 @@ class AllServicesAdmin(admin.ModelAdmin):
         'name',
     )
     readonly_fields = ('get_image',)
-
-    def get_image(self, obj):
-        return mark_safe(f'<img src={obj.img.url} width="60" height="50"')
-
-    get_image.short_description = "Изображение"
