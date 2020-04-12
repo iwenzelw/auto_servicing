@@ -17,11 +17,11 @@ class AllServices(models.Model):
     variant_2 = models.BooleanField(default=True, verbose_name='Опубликовать вариантом картинки?')
     img = ProcessedImageField(upload_to='all_services/img/%Y/%m/%d/', blank=True,
                               processors=[ResizeToFill(800, 600)],
-                              format='JPEG',
-                              options={'quality': 80}, verbose_name='Картинка')
+                              format='webp',
+                              options={'quality': 70}, verbose_name='Картинка')
     img_thumbnail = ImageSpecField(source='img',
                                    processors=[ResizeToFill(390, 260)],
-                                   format='JPEG',
+                                   format='webp',
                                    options={'quality': 60})
 
     def get_image(self):
@@ -51,11 +51,11 @@ class ServiceSingle(models.Model):
     price = models.PositiveIntegerField(verbose_name='цена операции', default=0)
     img = ProcessedImageField(upload_to='services_single/img/%Y/%m/%d/', blank=True,
                               processors=[ResizeToFill(800, 600)],
-                              format='JPEG',
-                              options={'quality': 80}, verbose_name='Картинка')
+                              format='webp',
+                              options={'quality': 70}, verbose_name='Картинка')
     img_thumbnail = ImageSpecField(source='img',
                                    processors=[ResizeToFill(390, 260)],
-                                   format='JPEG',
+                                   format='webp',
                                    options={'quality': 60})
 
     def get_image(self):

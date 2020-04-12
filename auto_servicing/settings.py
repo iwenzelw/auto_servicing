@@ -32,7 +32,13 @@ LOGIN_URL = 'accounts/login'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1  # Определяет срок действия писем с подтверждением по электронной почте (количество дней).
 ACCOUNT_USERNAME_MIN_LENGTH = 4  # Целое число, указывающее минимально допустимую длину имени пользователя.
 
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.Email.Backend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSl = False
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'iwenzel1975@gmail.com'
+EMAIL_HOST_PASSWORD = 'w2150644W'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,6 +53,8 @@ INSTALLED_APPS = [
     'main',
     'location_address.apps.LocationAddressConfig',  # расположение(адресс) и контаты(и соц.сети)
     'all_services.apps.AllServicesConfig',  # все услуги
+    'zapis_na_remont.apps.ZapisNaRemontConfig',  # запись на ремонт
+    'user_extension.apps.UserExtensionConfig',
 
     'imagekit',  # Автоматическая обработка изображений
     'django_summernote',  # Summernote - это простой редактор
@@ -132,7 +140,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -186,3 +194,7 @@ SUMMERNOTE_CONFIG = {
         ]
     }
 }
+
+AUTH_USER_MODEL = 'user_extension.User'
+
+
